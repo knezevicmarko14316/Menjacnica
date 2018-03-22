@@ -10,11 +10,10 @@ public class Menjacnica implements KursInterfejs {
 	@Override
 	public boolean dodajKurs(Kurs k) {
 		// TODO Auto-generated method stub
-		if (k == null || kursnaLista.contains(k)) {
-			System.out.println("Kurs je null ili je vec unet");
-			return false;
-		}
-			
+
+		if (k == null || kursnaLista.contains(k))
+			throw new RuntimeException("Kurs je null ili vec postoji");
+
 		
 		kursnaLista.add(k);
 		return true;
@@ -24,10 +23,9 @@ public class Menjacnica implements KursInterfejs {
 	public boolean obrisiKurs(Kurs k) {
 		// TODO Auto-generated method stub
 		if (k == null || !kursnaLista.contains(k))
-		{
-			System.out.println("Kurs je null ili ne postoji u listi!");
-			return false;
-		}
+
+			throw new RuntimeException("Knjiga je null ili ne postoji");
+
 
 		kursnaLista.remove(k);
 		return true;
@@ -37,10 +35,9 @@ public class Menjacnica implements KursInterfejs {
 	public Kurs pronadjiKurs(String naziv, GregorianCalendar datum) {
 		// TODO Auto-generated method stub
 		if (naziv == null||naziv=="" || datum==null)
-		{
-			System.out.println("Argumenti nisu ispravno uneti!");
-			return null;
-		}
+
+			throw new RuntimeException("Unesite naziv i datum kursa");
+
 		for (int i=0;i<kursnaLista.size();i++){
 			if (kursnaLista.get(i).getNazivValute().contains(naziv) &&  kursnaLista.get(i).getDatum()==datum)
 				
