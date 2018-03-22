@@ -11,36 +11,48 @@ public class Kurs {
 		return nazivValute;
 	}
 	public void setNazivValute(String nazivValute) {
+		if(nazivValute == null || nazivValute=="")
+			throw new RuntimeException("Naziv valute nije unet!");
 		this.nazivValute = nazivValute;
 	}
 	public String getSkracenNazivValute() {
 		return skracenNazivValute;
 	}
 	public void setSkracenNazivValute(String skracenNazivValute) {
+		if(skracenNazivValute == null || skracenNazivValute=="")
+			throw new RuntimeException("Skraceni naziv valute nije unet!");
 		this.skracenNazivValute = skracenNazivValute;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		if(datum == null )
+			throw new RuntimeException("Datum nije unet!");
 		this.datum = datum;
 	}
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(double prodajniKurs) {
+		if(prodajniKurs <=0)
+			throw new RuntimeException("Prodajni kurs nije ispravno unet!");
 		this.prodajniKurs = prodajniKurs;
 	}
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
+		if(srednjiKurs <=0)
+			throw new RuntimeException("Prodajni kurs nije ispravno unet!");
 		this.srednjiKurs = srednjiKurs;
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(double kupovniKurs) {
+		if(kupovniKurs <=0)
+			throw new RuntimeException("Prodajni kurs nije ispravno unet!");
 		this.kupovniKurs = kupovniKurs;
 	}
 	@Override
